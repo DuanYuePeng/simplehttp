@@ -1,4 +1,4 @@
-package simplehttp
+package graphql
 
 import (
 	"fmt"
@@ -32,7 +32,7 @@ func TestDoGraphQL(t *testing.T) {
 	defer server.Close()
 
 	respBody := new(SomeResponse)
-	err := DoGraphQL(server.URL, "query($arg:String!){hero{name}}", map[string]interface{}{
+	err := Send(server.URL, "query($arg:String!){hero{name}}", map[string]interface{}{
 		"arg": "someArgument",
 	}, map[string]string{
 		"Authorization": "Bearer some-token",

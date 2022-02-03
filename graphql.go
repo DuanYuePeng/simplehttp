@@ -1,4 +1,4 @@
-package simplehttp
+package graphql
 
 import (
 	"bytes"
@@ -9,7 +9,7 @@ import (
 	"net/http"
 )
 
-func DoGraphQL(url string, query string, variables map[string]interface{}, headers map[string]string, respBody interface{}) (err error) {
+func Send(url string, query string, variables map[string]interface{}, headers map[string]string, respBody interface{}) (err error) {
 	reqBody, err := json.Marshal(map[string]interface{}{
 		"query":     query,
 		"variables": variables,
