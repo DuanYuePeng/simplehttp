@@ -1,3 +1,3 @@
 # simplehttp
 
-`import "github.com/duanyuepeng/simplehttp"`
+`import "github.com/duanyuepeng/simplehttp/graphql"`
