@@ -32,7 +32,7 @@ func TestDoGraphQL(t *testing.T) {
 	defer server.Close()
 
 	respBody := new(SomeResponse)
-	err := Send(server.URL, "query($arg:String!){hero{name}}", map[string]interface{}{
+	err := Query(server.URL, "query($arg:String!){hero{name}}", map[string]interface{}{
 		"arg": "someArgument",
 	}, map[string]string{
 		"Authorization": "Bearer some-token",
